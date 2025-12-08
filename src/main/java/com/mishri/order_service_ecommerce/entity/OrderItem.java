@@ -13,9 +13,9 @@ import lombok.*;
 @Entity
 public class OrderItem extends BaseEntity{
 
-    private Long user_id;
-
     private Long product_id;
+
+    private Integer quantity;
 
     private Double price_per_unit;
 
