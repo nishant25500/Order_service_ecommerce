@@ -21,6 +21,10 @@ public class OrderItem extends BaseEntity{
 
     private Double total_price;
 
+    /**
+            * Many items belong to one order.
+            * Creates 'order_id' FK column in order_items table.
+     */
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
     private Order order;

@@ -21,6 +21,11 @@ public class Order extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
-    @OneToMany(mappedBy = "order")
+    /**
+     * One Order → Many OrderItems
+     * mappedBy = "order": OrderItem owns the relationship (FK order_id)
+     * cascade = ALL: saving Order automatically saves its OrderItems
+     */
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
 }

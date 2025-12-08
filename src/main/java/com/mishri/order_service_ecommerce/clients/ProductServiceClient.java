@@ -17,7 +17,7 @@ public class ProductServiceClient {
 
     public ProductDTO getProductById(Long productId){
 
-        String url = "http://localhost:8080/api/v1/ecommerce/product/" + productId;
+        String url = "http://ECOMMERCEAPP/api/v1/ecommerce/product/" + productId;
 
         ResponseEntity<ProductDTO> response = restTemplate.getForEntity(url,ProductDTO.class);
 
